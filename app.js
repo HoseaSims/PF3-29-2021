@@ -9,7 +9,7 @@ let firstProject =
 <div class="project-item card">
             
 <div>
-    <img src="/img/product landing page .png" alt="">
+    <img src="/img/productlandingpage.png" alt="">
 </div>
 
 <div>
@@ -27,7 +27,7 @@ let secondProject =
 <div class="project-item card">
             
 <div>
-    <img src="/img/Weather-app img.png" alt="">
+    <img src="/img/Weatherappimg.png" alt="">
 </div>
 
 <div>
