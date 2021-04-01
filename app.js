@@ -1,15 +1,12 @@
-const nextButton = document.querySelector('.next-button')
-const backButton = document.querySelector('.back-button')
-const projectSection = document.querySelector('.project-section')
+const nextButton = document.querySelector(".next-button");
+const backButton = document.querySelector(".back-button");
+const projectSection = document.querySelector(".project-section");
 
-
-
-let firstProject = 
-`
+let firstProject = `
 <div class="project-item card">
             
 <div>
-    <img src="/img/productlandingpage.png" alt="">
+    <img src="../img/productlandingpage.png" alt="">
 </div>
 
 <div>
@@ -20,10 +17,9 @@ let firstProject =
         <a href="https://github.com/HoseaSims/HondaRebel2021LP" target="_blank" class="link-button-left">GitHub</a>
     </div>
 </div>
-`
+`;
 
-let secondProject = 
-`
+let secondProject = `
 <div class="project-item card">
             
 <div>
@@ -38,9 +34,8 @@ let secondProject =
         <a href="https://github.com/HoseaSims/Weather-Project" target="_blank" class="link-button-left">GitHub</a>
     </div>
 </div>
-`
-let thirdProject = 
-`
+`;
+let thirdProject = `
 <div class="project-item card">
             
 <div>
@@ -57,43 +52,43 @@ let thirdProject =
 </div>
 
 
-`
+`;
 
-let projectList = [firstProject, secondProject, thirdProject]
+let projectList = [firstProject, secondProject, thirdProject];
 
-let number = 0
+let number = 0;
 
-projectSection.innerHTML = projectList[number]
+projectSection.innerHTML = projectList[number];
 console.log(number);
 
-    
+if (number <= 1) {
+  nextButton.addEventListener("click", (e) => {
+    number++;
 
-    if(number <= 1){
-
-        nextButton.addEventListener('click', e =>{
-            number++
-            
-            if(number >= 3){
-                number = 0
-            }
-            projectSection.classList.add('fadeout')
-            setTimeout(() =>{ projectSection.classList.remove('fadeout'), projectSection.classList.add('fadein'), projectSection.innerHTML = projectList[number]}, 200)
-            console.log(number);
-        })
+    if (number >= 3) {
+      number = 0;
     }
-    if (number >= 0){
-
-        backButton.addEventListener('click', e =>{
-            number--
-            if(number <= -1){
-                number = 2
-            }
-            projectSection.classList.add('fadeout')
-            setTimeout(() =>{ projectSection.classList.remove('fadeout'), projectSection.classList.add('fadein'), projectSection.innerHTML = projectList[number]}, 200)
-            console.log(number);
-        })
+    projectSection.classList.add("fadeout");
+    setTimeout(() => {
+      projectSection.classList.remove("fadeout"),
+        projectSection.classList.add("fadein"),
+        (projectSection.innerHTML = projectList[number]);
+    }, 200);
+    console.log(number);
+  });
+}
+if (number >= 0) {
+  backButton.addEventListener("click", (e) => {
+    number--;
+    if (number <= -1) {
+      number = 2;
     }
-    
-    
-
-
+    projectSection.classList.add("fadeout");
+    setTimeout(() => {
+      projectSection.classList.remove("fadeout"),
+        projectSection.classList.add("fadein"),
+        (projectSection.innerHTML = projectList[number]);
+    }, 200);
+    console.log(number);
+  });
+}
